@@ -39,6 +39,12 @@ jobs:
       - name: install xml-js
         run: npm install xml-js
         
+      - name: log json
+        run: console.log(convert.xml2json(xml))
+        env: 
+          convert: require('xml-js')
+          xml: require('fs')..readFileSync('./DerSturmTest.xml', 'utf8')
+        
 
 
       
