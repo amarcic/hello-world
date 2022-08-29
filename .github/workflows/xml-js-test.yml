@@ -47,6 +47,8 @@ jobs:
       - name: log json
         run: node ./convertXML.js
         
+      - name: display temp file content
+        run: node console.log(require('fs').readFileSync(jsonData.json))
 
 
       
