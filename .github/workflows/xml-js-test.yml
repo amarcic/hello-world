@@ -55,15 +55,17 @@ jobs:
       - name: log json
         run: node ./convertXML.js
         
-      - name: install algoloa cli
-        run: npm install @algolia/cli
+      #- name: install algoloa cli
+      #  run: npm install @algolia/cli
         
-      - name: json to algolia index
-        run: algolia import -s './jsonData.json' -a ALGOLIA_ID -k ALGOLOA_KEY -n ALGOLIA_INDEX
+      #- name: json to algolia index
+      #  run: algolia import -s './jsonData.json' -a ALGOLIA_ID -k ALGOLOA_KEY -n ALGOLIA_INDEX
+      - name: set up algolia cli
+        uses: algolia/setup-algolia-cli@v1.0.0
         env:
-          ALGOLIA_KEY: ${{ALGOLIA_DEMO_API_KEY}}
-          ALGOLIA_ID: ${{ALGOLIA_DEMO_API_APP_ID}}
-          ALGOLIA_INDEX: ${{ALGOLIA_DEMO_API_INDEX}}
+          ALGOLIA_ADMIN_API_KEY:: ${{ secrets.ALGOLIA_DEMO_API_KEY }}
+          ALGOLIA_APPLICATION_ID:: ${{ secrets.ALGOLIA_DEMO_API_APP_ID }}
+          
           
         
 
