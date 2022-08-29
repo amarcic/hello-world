@@ -31,6 +31,10 @@ jobs:
       - name: create file
         run: |
           printf "Hello\nWorld\n" > hw.txt
+          
+      # Display a temp file
+      - name: display temp file
+        run: cat hw.text
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
@@ -47,8 +51,6 @@ jobs:
       - name: log json
         run: node ./convertXML.js
         
-      - name: display temp file content
-        run: node console.log(2+2)
 
 
       
