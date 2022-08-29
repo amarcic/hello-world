@@ -60,8 +60,8 @@ jobs:
         
       #- name: json to algolia index
       #  run: algolia import -s './jsonData.json' -a ALGOLIA_ID -k ALGOLOA_KEY -n ALGOLIA_INDEX
-      - name: set up algolia cli
-        uses: algolia/setup-algolia-cli@v1.0.0
+      - name: setup-algolia-cli
+        uses: algolia/setup-algolia-cli@v1
         env:
           ALGOLIA_ADMIN_API_KEY:: ${{ secrets.ALGOLIA_DEMO_API_KEY }}
           ALGOLIA_APPLICATION_ID:: ${{ secrets.ALGOLIA_DEMO_API_APP_ID }}
