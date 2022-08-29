@@ -32,9 +32,9 @@ jobs:
         run: |
           printf "Hello\nWorld\n" > hw.txt
           
-      # Display a temp file
-      - name: display temp file
-        run: cat hw.text
+      # Display directory content
+      - name: display directory content
+        run: echo ls
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
