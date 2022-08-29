@@ -48,7 +48,7 @@ jobs:
         run: node ./convertXML.js
         
       - name: display temp file content
-        run: node console.log(require('fs').readFileSync(jsonData.json))
+        run: console.log(require('fs').readFileSync(jsonData.json))
 
 
       
