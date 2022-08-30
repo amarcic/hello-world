@@ -59,7 +59,7 @@ jobs:
         run: npm install -g @algolia/cli
         
       - name: try algolia cli
-        run: algolia import -s './jsonData.json' -a process.env.ALGOLIA_ID -k process.env.ALGOLOA_KEY -n process.env.ALGOLIA_INDEX
+        run: algolia import -s './jsonData.json' -a $ALGOLIA_ID -k $ALGOLOA_KEY -n $ALGOLIA_INDEX
         env:
           ALGOLIA_ID: ${{ secrets.ALGOLIA_DEMO_APP_ID }}
           ALGOLIA_KEY: ${{ secrets.ALGOLIA_DEMO_API_KEY }}
