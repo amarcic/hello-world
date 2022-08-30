@@ -59,7 +59,7 @@ jobs:
         run: npm install -g @algolia/cli
         
       - name: try algolia cli
-        run: algolia import -s './jsonData.json' -a ${ALGOLIA_ID} -k ${ALGOLOA_KEY} -n {ALGOLIA_INDEX}
+        run: algolia import -s './jsonData.json' -a ${ALGOLIA_ID} -k ${ALGOLOA_KEY} -n ${ALGOLIA_INDEX}
         
       #- name: json to algolia index
       #  run: algolia import -s './jsonData.json' -a ALGOLIA_ID -k ALGOLOA_KEY -n ALGOLIA_INDEX
