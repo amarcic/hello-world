@@ -45,12 +45,6 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-          
-      - name: setup-algolia-cli
-        uses: algolia/setup-algolia-cli@v1.0.0
-        env:
-          ALGOLIA_APPLICATION_ID: ${{ secrets.ALGOLIA_DEMO_APP_ID }}
-          ALGOLIA_ADMIN_API_KEY: ${{ secrets.ALGOLIA_DEMO_API_KEY }}
       
       - name: use node.js
         uses: actions/setup-node@v3.4.1
@@ -66,6 +60,12 @@ jobs:
         
       #- name: json to algolia index
       #  run: algolia import -s './jsonData.json' -a ALGOLIA_ID -k ALGOLOA_KEY -n ALGOLIA_INDEX
+      
+      - name: setup-algolia-cli
+        uses: algolia/setup-algolia-cli@v1.0.0
+      #  env:
+      #    ALGOLIA_APPLICATION_ID: ${{ secrets.ALGOLIA_DEMO_APP_ID }}
+      #    ALGOLIA_ADMIN_API_KEY: ${{ secrets.ALGOLIA_DEMO_API_KEY }}
       
           
           
