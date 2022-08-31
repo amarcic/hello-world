@@ -58,7 +58,7 @@ jobs:
       - name: add json to algolia index
         uses: chuckmeyer/add-algolia-record@v1
         env:
-          data: (cat ./jsonData.json)
+          data: $(cat ./jsonData.json)
         with:
           app_id: ${{ secrets.ALGOLIA_DEMO_APP_ID }}
           api_key: ${{ secrets.ALGOLIA_DEMO_API_WRITE_KEY }}
