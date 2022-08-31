@@ -56,7 +56,7 @@ jobs:
         run: node ./convertXML.js
         
       - name: put json from file into variable
-        run: echo "EDATA=(cat ./jsonData.json)" >> $GITHUB_ENV
+        run: echo "EDATA=$(cat jsonData.json)" >> $GITHUB_ENV
         
       - name: add json to algolia index
         uses: chuckmeyer/add-algolia-record@v1
