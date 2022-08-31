@@ -55,15 +55,23 @@ jobs:
       - name: log json
         run: node ./convertXML.js
         
-      - name: install algoloa cli
-        run: npm install -g @algolia/cli
+      - name: add json to algolia index
+        uses: chuckmeyer/add-algolia-record@v1
+        with:
+          app_id: ${{ secrets.ALGOLIA_DEMO_APP_ID }}
+          api_key: ${{ secrets.ALGOLIA_DEMO_API_WRITE_KEY }}
+          index_name: ${{ secrets.ALGOLIA_DEMO_API_INDEX }}
+          record: './jsonData.json'
         
-      - name: try algolia cli
-        run: algolia import -s './jsonData.json' -a ${{env.ALGOLIA_ID}} -k ${{env.ALGOLIA_KEY}} -n ${{env.ALGOLIA_INDEX}}
-        env:
-          ALGOLIA_ID: ${{ secrets.ALGOLIA_DEMO_APP_ID }}
-          ALGOLIA_KEY: ${{ secrets.ALGOLIA_DEMO_API_WRITE_KEY }}
-          ALGOLIA_INDEX: ${{ secrets.ALGOLIA_DEMO_API_INDEX }}
+      #- name: install algoloa cli
+      #  run: npm install -g @algolia/cli
+        
+      #- name: import json file with algolia cli
+      #  run: algolia import -s './jsonData.json' -a ${{env.ALGOLIA_ID}} -k ${{env.ALGOLIA_KEY}} -n ${{env.ALGOLIA_INDEX}}
+      #  env:
+      #    ALGOLIA_ID: ${{ secrets.ALGOLIA_DEMO_APP_ID }}
+      #    ALGOLIA_KEY: ${{ secrets.ALGOLIA_DEMO_API_WRITE_KEY }}
+      #    ALGOLIA_INDEX: ${{ secrets.ALGOLIA_DEMO_API_INDEX }}
         
       #- name: json to algolia index
       #  run: algolia import -s './jsonData.json' -a ALGOLIA_ID -k ALGOLOA_KEY -n ALGOLIA_INDEX
