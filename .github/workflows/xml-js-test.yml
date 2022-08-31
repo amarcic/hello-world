@@ -61,7 +61,7 @@ jobs:
           app_id: ${{ secrets.ALGOLIA_DEMO_APP_ID }}
           api_key: ${{ secrets.ALGOLIA_DEMO_API_WRITE_KEY }}
           index_name: ${{ secrets.ALGOLIA_DEMO_API_INDEX }}
-          record: './jsonData.json'
+          record: cat ./jsonData.json
         
       #- name: install algoloa cli
       #  run: npm install -g @algolia/cli
