@@ -56,7 +56,7 @@ jobs:
         run: node ./convertXML.js
         
       - name: put json from file into variable
-        run: echo "EDATA=$(< ./jsonData.json)" >> $GITHUB_ENV
+        run: echo EDATA=$(< ./jsonData.json) >> $GITHUB_ENV
         
       - name: add json to algolia index
         uses: chuckmeyer/add-algolia-record@v1
@@ -64,7 +64,7 @@ jobs:
           app_id: ${{ secrets.ALGOLIA_DEMO_APP_ID }}
           api_key: ${{ secrets.ALGOLIA_DEMO_API_WRITE_KEY }}
           index_name: ${{ secrets.ALGOLIA_DEMO_API_INDEX }}
-          record: "$env.EDATA"
+          record: ${{ $env.EDATA }}
         
       #- name: install algoloa cli
       #  run: npm install -g @algolia/cli
