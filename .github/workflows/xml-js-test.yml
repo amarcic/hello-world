@@ -52,6 +52,9 @@ jobs:
       - name: install xml-js
         run: npm install xml-js
         
+      - name: install lodash
+        run: npm install lodash
+        
       - name: log json
         run: node ./convertXML.js
         
